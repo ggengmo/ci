@@ -31,12 +31,12 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
             set -e
-            cd /home/ubuntu/test
-            git pull master main
+            cd /home/ubuntu/test/drf_test
+            git pull origin master
 
-            echo "SECRET_KEY=\"${{ secrets.SECRET_KEY }}\"" >> .env
+            echo "SECRET_KEY=\"${{ secrets.SECRET_KEY }}\"" > .env
             echo "DEBUG='${{ secrets.DEBUG }}'" >> .env
 
-            source /home/ubuntu/venv/bin/activate
+            source venv/bin/activate
             pip install -r requirements.txt
             sudo systemctl restart drf.service
