@@ -31,7 +31,7 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
             set -e
-            cd /home/ubuntu/test/drf_test
+            cd /home/ubuntu/test
             source /home/ubuntu/venv/bin/activate
             git pull origin main
 
